@@ -8,11 +8,10 @@ import pipelines.spark.sql.SQLImplicits._
 import org.apache.spark.sql.streaming.OutputMode
 
 class SparkConsoleEgress extends SparkStreamlet {
-  val in = AvroInlet[Agg]("in")
+  val in = AvroInlet[Data]("in")
   val shape = StreamletShape(in)
 
   override def createLogic() = new SparkStreamletLogic {
-    //tag::docs-checkpointDir-example[]
     override def buildStreamingQueries = {
       readStream(in).writeStream
         .format("console")
@@ -21,6 +20,5 @@ class SparkConsoleEgress extends SparkStreamlet {
         .start()
         .toQueryExecution
     }
-    //end::docs-checkpointDir-example[]
   }
 }
