@@ -3,14 +3,14 @@ import sbt.Keys._
 
 import scalariform.formatter.preferences._
 
-lazy val sparkPipeline = (project in file("."))
+lazy val sparkRaffle = (project in file("."))
     .enablePlugins(PipelinesSparkApplicationPlugin, PipelinesAkkaStreamsApplicationPlugin)
     .settings(
       libraryDependencies ++= Seq(
         "org.scalatest" %% "scalatest" % "3.0.7" % "test"
       ),
 
-      name := "spark-pipeline",
+      name := "spark-raffle",
       organization := "com.lightbend",
 
       scalaVersion := "2.12.8",

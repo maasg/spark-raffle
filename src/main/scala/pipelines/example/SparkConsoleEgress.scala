@@ -8,7 +8,7 @@ import pipelines.spark.sql.SQLImplicits._
 import org.apache.spark.sql.streaming.OutputMode
 
 class SparkConsoleEgress extends SparkStreamlet {
-  val in = AvroInlet[Data]("in")
+  val in = AvroInlet[Votes]("in")
   val shape = StreamletShape(in)
 
   override def createLogic() = new SparkStreamletLogic {
