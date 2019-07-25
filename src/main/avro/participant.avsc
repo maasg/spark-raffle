@@ -1,0 +1,16 @@
+{
+    "namespace": "pipelines.example",
+    "type": "record",
+    "name": "Participant",
+    "fields":[
+         {
+            "name": "name", 
+            "type": "string"
+         },
+         {
+            "name": "guess",
+            "type": "int"
+         }
+    ]
+}
+
